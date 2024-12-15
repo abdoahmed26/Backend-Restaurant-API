@@ -14,10 +14,13 @@ import { foodsRouter } from "./routes/foodsRoute"
 import { reviewsRouter } from "./routes/reviewsRoute"
 import { cartRouter } from "./routes/cartsRoute"
 import { checkoutRouter } from "./routes/checkoutRoute"
+import { connectDB } from "./models/db"
 
 dotenv.config()
 
 const app = express()
+
+connectDB()
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,

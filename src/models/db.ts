@@ -11,4 +11,13 @@ const pool = new Pool({
     port:+(process.env.DB_PORT as string),
 })
 
+export const connectDB = async()=>{
+    try {
+        await pool.connect();
+        console.log("connected to database");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export default pool;
