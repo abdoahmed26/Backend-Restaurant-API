@@ -13,10 +13,10 @@ export const getCarts = async(req:any,res:Response)=>{
 
 export const addToCart = async(req:any,res:Response)=>{
     try {
-        const search = `SELECT * FROM carts WHERE food_id = ${req.params.id};`
+        const search = `SELECT * FROM carts WHERE food_id = ${req.params.id} AND user_id = ${req.user.id};`
         const result = await pool.query(search)
         if(result.rows.length > 0) {
-            const query = `UPDATE carts SET qty=${+result.rows[0].qty+1} WHERE food_id=${req.params.id}`
+            const query = `UPDATE carts SET qty=${+result.rows[0].qty+1} WHERE food_id=${req.params.id} AND user_id=${req.user.id}`
             await pool.query(query)
         }
         else{

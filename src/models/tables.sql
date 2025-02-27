@@ -55,6 +55,16 @@ CREATE TABLE IF NOT EXISTS "carts" (
   "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+-- wishlists table
+CREATE TABLE IF NOT EXISTS "wishlists" (
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT NOT NULL,
+  FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE,
+  "food_id" INT NOT NULL,
+  FOREIGN KEY ("food_id") REFERENCES "foods"("id") ON DELETE CASCADE,
+  "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 -- orders table
 CREATE TABLE IF NOT EXISTS "orders" (
   "id" SERIAL PRIMARY KEY,

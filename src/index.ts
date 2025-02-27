@@ -15,6 +15,7 @@ import { reviewsRouter } from "./routes/reviewsRoute"
 import { cartRouter } from "./routes/cartsRoute"
 import { checkoutRouter } from "./routes/checkoutRoute"
 import { connectDB } from "./models/db"
+import { wishlistsRouter } from "./routes/wishlistsRoute"
 
 dotenv.config()
 
@@ -47,6 +48,8 @@ app.use("/api/v1/foods",foodsRouter)
 app.use("/api/v1/reviews",reviewsRouter)
 
 app.use("/api/v1/cart",cartRouter)
+
+app.use("/api/v1/wishlist",wishlistsRouter)
 
 app.use("/api/v1/checkout",checkoutRouter)
 
