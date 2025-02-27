@@ -26,7 +26,7 @@ export const handlePayment = async (req:any, res:Response)=>{
     try {
         const { payment_id } = req.body
         const paymentIntent = await stripe.paymentIntents.retrieve(payment_id)
-        console.log(paymentIntent);
+        // console.log(paymentIntent);
         if(paymentIntent.status === 'succeeded'){
             res.status(200).json({status:"success",message:"Payment successful"})
         } else {
