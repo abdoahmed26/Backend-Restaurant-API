@@ -1,6 +1,6 @@
 # 🎨 **Restaurant API**
 
-A Restaurant APIs implemented with (Node.js, Express.js, MongoDB)
+A Restaurant APIs implemented with (Node.js, Express.js, PostgreSQL)
 
 
 ## ✨ Follow Me
@@ -96,7 +96,13 @@ npm run dev
     - user can read all foods
     - admins and manager can (create, update, delete) foods
 - **Shopping cart management**
-    - user cant add or update or delete items to cart
+    - user cant get or add or update or delete items to cart
+- **Wishlist management**
+    - user cant get or add or delete items to Wishlist
+- **Orders Management**
+    - user can get all his orders
+    - admins and manager can get all orders of all users
+    - admins and manager can update order status
 - **File uploads Management**
     - admin and manager can upload images for cattegories and foods
     - user can upload image for profile image 

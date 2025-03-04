@@ -73,5 +73,6 @@ CREATE TABLE IF NOT EXISTS "orders" (
   "food_id" INT NOT NULL,
   FOREIGN KEY ("food_id") REFERENCES "foods"("id") ON DELETE CASCADE,
   "qty" INT NOT NULL,
+  "status": VARCHAR(10) DEFAULT 'pending',
   "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
